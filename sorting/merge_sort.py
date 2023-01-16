@@ -1,38 +1,38 @@
 # 11 7 3 12
 # [7,11] [3,12]
 # [3,7,11,12]
-def merge_sort(list):
+def mergeSort(list):
     if len(list) == 1:
         return list
     halfSize = int(len(list)/2)
     left = list[:halfSize]
     right = list[halfSize:]
-    leftSorted = merge_sort(left)
-    rightSorted = merge_sort(right)
+    leftSorted = mergeSort(left)
+    rightSorted = mergeSort(right)
 
     # [7,11] [3,12*,15]
     # [3,7,11,12,15]
     mergedSorted = []
-    l = 0
-    r = 0
+    leftIndex = 0
+    rightIndex = 0
 
-    while l < len(leftSorted) and r < len(rightSorted):
-        if leftSorted[l] <= rightSorted[r]:
-            mergedSorted.append(leftSorted[l])
-            l += 1
+    while leftIndex < len(leftSorted) and rightIndex < len(rightSorted):
+        if leftSorted[leftIndex] <= rightSorted[rightIndex]:
+            mergedSorted.append(leftSorted[leftIndex])
+            leftIndex += 1
         else:
-            mergedSorted.append(rightSorted[r])
-            r += 1
+            mergedSorted.append(rightSorted[rightIndex])
+            rightIndex += 1
 
-    while l < len(leftSorted):
-        mergedSorted.append(leftSorted[l])
-        l += 1
+    while leftIndex < len(leftSorted):
+        mergedSorted.append(leftSorted[leftIndex])
+        leftIndex += 1
 
-    while r < len(rightSorted):
-        mergedSorted.append(rightSorted[r])
-        r += 1
+    while rightIndex < len(rightSorted):
+        mergedSorted.append(rightSorted[rightIndex])
+        rightIndex += 1
 
     return mergedSorted
 
 
-print(merge_sort([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0]))
+print(mergeSort([6, 20, 8, 19, 56, 23, 87, 41, 49, 53]))
