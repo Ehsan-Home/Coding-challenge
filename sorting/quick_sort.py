@@ -8,7 +8,7 @@ def quickSort(list):
     lastPointer = len(list) - 1
 
     # 10, 8, 2, -1, -10
-    while True:
+    while firstPointer <= lastPointer:
         while firstPointer < len(list) and list[firstPointer] <= pivotPoint:
             # print(firstPointer)
             firstPointer += 1
@@ -16,10 +16,8 @@ def quickSort(list):
         while lastPointer > 0 and list[lastPointer] > pivotPoint:
             lastPointer -= 1
 
-        if firstPointer > lastPointer:
-            break
-
-        list[firstPointer], list[lastPointer] = list[lastPointer], list[firstPointer]
+        if firstPointer <= lastPointer:
+            list[firstPointer], list[lastPointer] = list[lastPointer], list[firstPointer]
 
     list[0], list[lastPointer] = list[lastPointer], list[0]
 
@@ -40,18 +38,9 @@ def quickSort(list):
     # print(f"right sorted {rightSorted}")
     # print("----")
 
-    listTemp = []
-
-    for item in leftSorted:
-        listTemp.append(item)
-
-    listTemp.append(pivotPoint)
-
-    for item in rightSorted:
-        listTemp.append(item)
-
-    return listTemp
+    return leftSorted + [pivotPoint] + rightSorted
 
 
 # print(quickSort([10, 8, 2, -1, -10]))
-print(quickSort([8, 1, 10, 3, 4, 29]))
+# print(quickSort([8, 1, 10, 3, 4, 29]))
+print(quickSort([9, 4, 7, 2, 8, 1, 6, 3, 5, 0]))
