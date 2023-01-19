@@ -40,7 +40,7 @@ def quickSort(list):
 
     return leftSorted + [pivotPoint] + rightSorted
 
-
 # print(quickSort([10, 8, 2, -1, -10]))
 # print(quickSort([8, 1, 10, 3, 4, 29]))
-print(quickSort([9, 4, 7, 2, 8, 1, 6, 3, 5, 0]))
+# print(quickSort([9, 4, 7, 2, 8, 1, 6, 3, 5, 0]))
+# print(quickSort([20, 6, 8, 53, 56, 12, 87, 41, 49, 19]))
