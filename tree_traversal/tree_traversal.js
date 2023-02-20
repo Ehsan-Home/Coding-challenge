@@ -48,6 +48,16 @@ function BFS(root) {
   }
 }
 
+function DFS(root) {
+  if (!root) {
+    return;
+  }
+
+  DFS(root.left);
+  console.log(root.value);
+  DFS(root.right);
+}
+
 // MAIN
 
 let root = new MyNode(8);
@@ -58,4 +68,6 @@ addNode(root, 7.5);
 
 // console.log(root);
 
-BFS(root);
+// BFS(root);
+
+DFS(root);
