@@ -10,3 +10,6 @@ function concat(...args) {
 
   return res;
 }
+
+// flat combines all inner arrays into a single array
+console.log(args.flat(Infinity));
