@@ -54,8 +54,10 @@ function DFS(root) {
   }
 
   DFS(root.left);
-  console.log(root.value);
+
   DFS(root.right);
+
+  console.log(root.value);
 }
 
 // MAIN
